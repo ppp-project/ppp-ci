@@ -29,7 +29,7 @@ PrintMessage "Removing previous build artifacts..."
 rm -rf $BUILD_DIRECTORY_PATH
 
 PrintMessage "Downloading Buildroot sources..."
-git clone --depth=1 --branch=2021.02.5 https://git.busybox.net/buildroot $BUILD_DIRECTORY_PATH
+git clone --depth=1 --branch=2021.02.5 https://github.com/buildroot/buildroot $BUILD_DIRECTORY_PATH
 
 PrintMessage "Modifying the PPP package to use upstream PPP sources..."
 PPP_PACKAGE_PATH="${BUILD_DIRECTORY_PATH}/package/pppd"
