@@ -23,7 +23,7 @@ OUTPUT_DIRECTORY="$3"
 
 # Create the build directory name
 BUILD_DIRECTORY_NAME="buildroot-${DEFCONFIG_NAME}-${LIBC_NAME}"
-BUILD_DIRECTORY_PATH=$(realpath "${OUTPUT_DIRECTORY}/${BUILD_DIRECTORY_NAME}")
+BUILD_DIRECTORY_PATH=$(realpath "${OUTPUT_DIRECTORY}")/"${BUILD_DIRECTORY_NAME}"
 
 PrintMessage "Removing previous build artifacts..."
 rm -rf $BUILD_DIRECTORY_PATH
