@@ -6,7 +6,7 @@ The prebuilt Buildroot images are also stored in this repository releases sectio
 
 ## Requirements
 
-The scripts in this repository are designed to run on **Ubuntu 20.04**.  
+The scripts in this repository are designed to run on **Ubuntu 22.04**.  
 Make sure the following packages are installed :
 ```
 sudo apt install build-essential curl git zstd
