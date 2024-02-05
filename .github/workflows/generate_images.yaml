@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   buildroot:
     name: Build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         defconfig_name: [qemu_x86_defconfig, qemu_x86_64_defconfig, raspberrypi4_defconfig, raspberrypi4_64_defconfig, qemu_ppc64le_pseries_defconfig, qemu_mips32r2_malta_defconfig, qemu_mips64_malta_defconfig]
@@ -15,7 +15,7 @@ jobs:
       contents: write
     steps:
       - name: Retrieve CI scripts
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Run build script
         run: |
           bash -x ${{ github.workspace }}/build-buildroot.sh ${{ matrix.defconfig_name }} ${{ matrix.libc_name }} /home/runner
