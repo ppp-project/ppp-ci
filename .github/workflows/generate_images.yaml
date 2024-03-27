@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Run build script
         run: |
-          bash -x ${{ github.workspace }}/build-buildroot.sh ${{ matrix.defconfig_name }} ${{ matrix.libc_name }} /home/runner
+          bash -x ${{ github.workspace }}/build-image.sh ${{ matrix.defconfig_name }} ${{ matrix.libc_name }} /home/runner
       - name: Archive image
         run: |
           tar -c ${{ env.BUILDROOT_DIRECTORY_NAME }} -f ${{ env.BUILDROOT_DIRECTORY_NAME }}.tar
