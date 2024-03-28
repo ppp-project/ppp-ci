@@ -7,8 +7,20 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        defconfig_name: [qemu_x86_defconfig, qemu_x86_64_defconfig, raspberrypi4_defconfig, raspberrypi4_64_defconfig, qemu_ppc64le_pseries_defconfig, qemu_mips32r2_malta_defconfig, qemu_mips64_malta_defconfig]
-        libc_name: [glibc, uclibc, musl]
+        defconfig_name:
+          - qemu_x86_defconfig
+          - qemu_x86_64_defconfig
+          - raspberrypi4_defconfig
+          - raspberrypi4_64_defconfig
+          - qemu_ppc64le_pseries_defconfig
+          - qemu_mips32r2_malta_defconfig
+          - qemu_mips64_malta_defconfig
+          - qemu_riscv32_virt_defconfig
+          - qemu_riscv64_virt_defconfig
+        libc_name:
+          - glibc
+          - uclibc
+          - musl
     env:
       BUILDROOT_DIRECTORY_NAME: /home/runner/buildroot-${{ matrix.defconfig_name }}-${{ matrix.libc_name }}
     permissions:
